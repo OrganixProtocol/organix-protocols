@@ -545,7 +545,7 @@ contract LPTokenWrapper {
     using SafeMath for uint256;
     using SafeERC20 for IERC20;
 
-    IERC20 public uni = IERC20(0x85de07be5d3EA743A7315125293B76549f53133d);
+    IERC20 public uni = IERC20(0x28E11051fCfA33722B7f6514cAbBf1494f6E08B7);
 
     uint256 private _totalSupply;
     mapping(address => uint256) private _balances;
@@ -572,7 +572,7 @@ contract LPTokenWrapper {
 }
 
 contract OGXBNBLPRewards is LPTokenWrapper, IRewardDistributionRecipient {
-    IERC20 public ogx = IERC20(0xE2c818db228261053f3B3C2653B62842a46d95A9);
+    IERC20 public ogx = IERC20(0xe74D730C3DDeadA91Eadd74E0EF49dC6F9b56603);
     uint256 public constant DURATION = 7 days;
 
     uint256 public periodFinish = 0;
