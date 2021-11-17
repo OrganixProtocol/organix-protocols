@@ -237,8 +237,9 @@ contract FeePool is Owned, Proxyable, LimitedSetup, MixinSystemSettings, IFeePoo
     function recordFeePaid(uint amount) external onlyInternalContracts {
         // Keep track off fees in oUSD in the open fee pool period.
         if(AccumulationRate > 0 && AccumulationAddress != address(0)) {
-            AccumulationAmount = amount.multiplyDecimalRound(AccumulationRate);
-            amount = amount.sub(AccumulationAmount);
+            uint deltAmount = amount.multiplyDecimalRound(AccumulationRate);
+            AccumulationAmount =  AccumulationAmount.add(deltAmount);
+            amount = amount.sub(deltAmount);
         }
         _recentFeePeriodsStorage(0).feesToDistribute = _recentFeePeriodsStorage(0).feesToDistribute.add(amount);
     }
