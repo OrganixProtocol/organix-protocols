@@ -1,7 +1,7 @@
 // @unsupported: ovm
 pragma solidity ^0.5.16;
 
-import "../interfaces/IWBNB.sol";
+import "./interfaces/IWBNB.sol";
 
 contract WBNB is IWBNB {
     string public name = "Wrapped BNB";
